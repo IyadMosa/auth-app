@@ -16,7 +16,6 @@ export const login = (auth, history) => (dispatch, getState) =>
   )(dispatch, getState)
     .then((data) => {
       // Save the token in local storage or a cookie
-      console.log("data", data);
       if (data.success === false) {
         dispatch({ type: LOGIN_ERROR, payload: data.message });
       } else {
