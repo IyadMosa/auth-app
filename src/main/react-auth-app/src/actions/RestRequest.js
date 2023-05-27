@@ -15,7 +15,6 @@ export const RestRequest = (url, method, body) => (dispatch, getState) => {
       window.location.href = "/"; // Redirect to the login page
       return Promise.reject(response.error);
     } else {
-      console.log(response);
       return response.headers.get("Content-Type").includes("text")
         ? response.text()
         : response.json();
